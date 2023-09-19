@@ -44,9 +44,20 @@
     <div class="clickSec">
         <h1>Click Hear</h1>
     </div>
-    <p class="text">Click Are : <span>0</span></p>
+    <p class="text">Click Are : <span class="count">0</span></p>
     <script>
-
+        let a = 0;
+        document.querySelector(".clickSec").addEventListener("click", function(){
+            a++
+            console.log(a);
+            document.querySelector(".count").innerHTML=a;
+            if(a>10){
+                document.querySelector(".modal").src="./RED_MODEL.glb"
+            }
+            if(a>20){
+                document.querySelector(".modal").src="./blue-modal.glb"
+            }
+        })
 
         document.querySelector(".btn-red").addEventListener("click",function(){
             document.querySelector(".modal").src="./RED_MODEL.glb"
