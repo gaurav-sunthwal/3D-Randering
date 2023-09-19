@@ -51,10 +51,10 @@
             a++
             console.log(a);
             document.querySelector(".count").innerHTML=a;
-            if(a>10){
+            if(a%2==0){
                 document.querySelector(".modal").src="./RED_MODEL.glb"
             }
-            if(a>20){
+            else{
                 document.querySelector(".modal").src="./blue-modal.glb"
             }
         })
