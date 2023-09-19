@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Change for 3D Model</title>
+    <!-- Include model-viewer and any required libraries -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<style>
+    model-viewer{
+        width: 100%;
+        height: 50vh;
+    }
+    .clickSec{
+        width: 100%;
+        height: 40;
+        border: 2px solid black;
+        margin-top: 12px;
+        padding: 20px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+</style>
+
+<body>
+    <model-viewer
+        id="color"
+        class="modal"
+        camera-controls
+        touch-action="pan-y"
+        interaction-prompt="none"
+        src="./modal.glb"
+        ar
+        alt="A 3D model of an astronaut"
+    >
+    </model-viewer>
+    <div class="controls" id="color-controls">
+        <button data-color="#ff0000" class="btn-red" >Red</button>
+        <button data-color="#00ff00" class="btn-white">White</button>
+        <button data-color="#0000ff" class="btn-blue">Blue</button>
+    </div>
+    <div class="clickSec">
+        <h1>Click Hear</h1>
+    </div>
+    <p class="text">Click Are : <span>0</span></p>
+    <script>
+
+
+        document.querySelector(".btn-red").addEventListener("click",function(){
+            document.querySelector(".modal").src="./RED_MODEL.glb"
+        })
+        document.querySelector(".btn-blue").addEventListener("click",function(){
+            document.querySelector(".modal").src="./blue-modal.glb"
+        })
+        document.querySelector(".btn-white").addEventListener("click",function(){
+            document.querySelector(".modal").src="./modal.glb"
+        })
+    </script>
+</body>
+</html>
